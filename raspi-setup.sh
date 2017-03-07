@@ -31,7 +31,11 @@ sudo apt-get update
 sudo apt-get dist-upgrade -y
 
 # add pi-top utils
-sudo apt-get install pt-battery pt-hub-controller
+sudo apt-get install pt-battery pt-hub-controller pt-ipc pt-display -y
+
+# enable SPI and I2C
+sudo raspi-config
+# interfaces
 
 # backup minecraft-pi
 sudo cp /opt/minecraft-pi/minecraft-pi /opt/minecraft-pi/minecraft-pi.bak
