@@ -27,12 +27,12 @@ wget http://apt.pi-top.com/apt.pi-top.com.gpg.key
 sudo apt-key add apt.pi-top.com.gpg.key
 sudo apt-get update
 
+# add pi-top utils
+sudo apt-get install vim pt-battery pt-hub-controller pt-ipc pt-display -y
+
 # update Raspbian
 sudo apt-get update
 sudo apt-get dist-upgrade -y
-
-# add pi-top utils
-sudo apt-get install vim pt-battery pt-hub-controller pt-ipc pt-display -y
 
 # enable SPI and I2C
 sudo raspi-config
