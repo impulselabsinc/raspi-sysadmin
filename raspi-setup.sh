@@ -14,23 +14,24 @@ sudo raspi-config
 # change timezone to US/eatern
 # change keyboard to 104-key(PC) US
 
+# install utilities
+sudo apt-get install okteta vim -y
+
+# add pi-top apt repo
+# sudo vi  /etc/apt/sources.list.d/pi-top.list
+# insert 'deb http://apt.pi-top.com/raspbian/ jessie main'
+# save and close
+sudo echo "deb http://apt.pi-top.com/raspbian/ jessie main" | sudo tee -a /etc/apt/sources.list.d/pi-top.list
+cd /tmp
+wget http://apt.pi-top.com/apt.pi-top.com.gpg.key
+sudo apt-key add apt.pi-top.com.gpg.key
+
 # update Raspbian
 sudo apt-get update
 sudo apt-get dist-upgrade -y
 
-# install utilities
-sudo apt-get install okteta vim -y
-
-# install chromium
-wget -qO - http://bintray.com/user/downloadSubjectPublicKey?username=bintray | sudo apt-key add -
-echo "deb http://dl.bintray.com/kusti8/chromium-rpi jessie main" | sudo tee -a /etc/apt/sources.list
-sudo apt-get update
-sudo apt-get install chromium-browser rpi-chromium-mods rpi-youtube -y
-
-# update chromium regularly
-sudo apt-get update
-sudo apt-get dist-upgrade
-run_omxplayer.py -U
+# add pi-top utils
+sudo apt-get install pt-battery pt-hub-controller
 
 # backup minecraft-pi
 sudo cp /opt/minecraft-pi/minecraft-pi /opt/minecraft-pi/minecraft-pi.bak
@@ -45,3 +46,5 @@ git clone https://github.com/impulselabsinc/mclabyrinth
 git clone https://github.com/impulselabsinc/mcpi
 git clone https://github.com/impulselabsinc/minecraft-skins
 git clone https://github.com/impulselabsinc/students
+git clone https://github.com/impulselabsinc/raspi-sysadmin
+
