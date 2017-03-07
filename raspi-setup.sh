@@ -15,7 +15,7 @@ sudo raspi-config
 # change keyboard to 104-key(PC) US
 
 # install utilities
-sudo apt-get install okteta vim -y
+# sudo apt-get install okteta vim -y
 
 # add pi-top apt repo
 # sudo vi  /etc/apt/sources.list.d/pi-top.list
@@ -25,13 +25,14 @@ sudo echo "deb http://apt.pi-top.com/raspbian/ jessie main" | sudo tee -a /etc/a
 cd /tmp
 wget http://apt.pi-top.com/apt.pi-top.com.gpg.key
 sudo apt-key add apt.pi-top.com.gpg.key
+sudo apt-get update
 
 # update Raspbian
 sudo apt-get update
 sudo apt-get dist-upgrade -y
 
 # add pi-top utils
-sudo apt-get install pt-battery pt-hub-controller pt-ipc pt-display -y
+sudo apt-get install vim pt-battery pt-hub-controller pt-ipc pt-display -y
 
 # enable SPI and I2C
 sudo raspi-config
