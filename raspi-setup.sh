@@ -28,7 +28,7 @@ sudo apt-key add apt.pi-top.com.gpg.key
 sudo apt-get update
 
 # add pi-top utils
-sudo apt-get install vim pt-battery pt-hub-controller pt-ipc pt-display -y
+sudo apt-get install vim pt-battery pt-hub-controller pt-ipc pt-display chromium-browser rpi-chromium-mods -y
 
 # update Raspbian
 sudo apt-get update
