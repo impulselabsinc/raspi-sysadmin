@@ -28,7 +28,7 @@ sudo apt-key add apt.pi-top.com.gpg.key
 sudo apt-get update
 
 # add pi-top utils
-sudo apt-get install vim pt-battery pt-hub-controller pt-ipc pt-display -y
+sudo apt-get install vim pt-battery pt-hub-controller pt-ipc pt-display pavucontrol pasystray -y
 
 # update Raspbian
 sudo apt-get update
@@ -36,7 +36,33 @@ sudo apt-get dist-upgrade -y
 
 # enable SPI and I2C
 sudo raspi-config
-# interfaces
+# go to the interfaces tab
+# enable SPI and i2c
+
+# pulseaudio setup for USB sound card
+# configure pulseaudio
+# In /etc/pulse/daemon.conf  change "resample-method" to either:
+# trivial: lowest cpu, low quality
+# src-sinc-fastest: more cpu, good resampling
+# speex-fixed-N: N from 1 to 7, lower to higher CPU/quality
+resample-method = trivial
+
+# daemonize pulseaudio
+cat <<EOF >/etc/systemd/system/pulseaudio.service
+[Unit]
+Description=Pulse Audio
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/pulseaudio --system --disallow-exit --disable-shm --exit-idle-time=-1
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# start pulse audio
+systemctl daemon-reload
+systemctl enable pulseaudio.service
 
 # backup minecraft-pi
 sudo cp /opt/minecraft-pi/minecraft-pi /opt/minecraft-pi/minecraft-pi.bak
