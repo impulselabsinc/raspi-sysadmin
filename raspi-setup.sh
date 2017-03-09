@@ -48,7 +48,7 @@ sudo raspi-config
 resample-method = trivial
 
 # daemonize pulseaudio
-cat <<EOF >/etc/systemd/system/pulseaudio.service
+sudo bash -c 'cat <<EOF >/etc/systemd/system/pulseaudio.service
 [Unit]
 Description=Pulse Audio
 
@@ -58,7 +58,7 @@ ExecStart=/usr/bin/pulseaudio --system --disallow-exit --disable-shm --exit-idle
 
 [Install]
 WantedBy=multi-user.target
-EOF
+EOF'
 
 # start pulse audio
 systemctl daemon-reload
