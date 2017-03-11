@@ -50,6 +50,9 @@ sudo vim /usr/share/alsa/alsa.conf
 # change to
 # defaults.ctl.card 1
 # defaults.pcm.card 1
+vim ~/.asoundrc
+# change following setting 'pcm.!default' and 'ctl.!default' to
+# card 0
 
 # backup minecraft-pi
 sudo cp /opt/minecraft-pi/minecraft-pi /opt/minecraft-pi/minecraft-pi.bak
