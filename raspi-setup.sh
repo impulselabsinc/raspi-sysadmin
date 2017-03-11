@@ -39,20 +39,16 @@ sudo raspi-config
 # go to the interfaces tab
 # enable SPI and i2c
 
-# ALSA setup for USB sound card
-sudo bash -c 'cat <<EOF >/etc/modprobe.d/alsa.conf
-options snd_usb_audio index=0
-options snd_bcm2835 index=1
-EOF'
-
 sudo vim /usr/share/alsa/alsa.conf
 # search for defaults
 # change to
 # defaults.ctl.card 1
 # defaults.pcm.card 1
+
+# ~/.asoundrc is created when the defaults are changed in 'Audio Device Settings' under 'Preferences'
 vim ~/.asoundrc
 # change following setting 'pcm.!default' and 'ctl.!default' to
-# card 0
+# card 1
 
 # backup minecraft-pi
 sudo cp /opt/minecraft-pi/minecraft-pi /opt/minecraft-pi/minecraft-pi.bak
