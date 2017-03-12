@@ -68,8 +68,14 @@ git clone git://github.com/rricharz/pi-top-install
 git clone git://github.com/rricharz/pi-top-battery-status
 
 # install pi-top utils
-chmod +x pi-top-install/install*
-chmod +x pi-top-battery-status/install
-pi-top-battery-status/install
-pi-top-install/install-brightness
+cd ~/impulselabs/pi-top-install
+chmod +x install*
+./install-brightness
+cd ~/impulselabs/pi-top-battery-status
+chmod +x install
+./install
+
+# pitop keyboard mappings
+mv ~/.config/openbox/lxde-pi-rc.xml ~/.config/openbox/lxde-pi-rc.xml.old
+cp ~/impulselabs/raspi-sysadmin/lxde-pi-rc.xml ~/.config/openbox/
 
