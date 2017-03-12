@@ -1,0 +1,10 @@
+    <keybind key="0xC7">
+      <action name="Execute">
+        <command>brightness increase</command>
+      </action>
+    </keybind>
+    <keybind key="0xC6">
+      <action name="Execute">
+        <command>brightness decrease</command>
+      </action>
+    </keybind>
