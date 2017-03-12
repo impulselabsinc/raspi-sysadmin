@@ -28,7 +28,7 @@ sudo apt-key add apt.pi-top.com.gpg.key
 sudo apt-get update
 
 # add pi-top utils
-sudo apt-get install vim pt-battery pt-hub-controller pt-ipc pt-display -y
+sudo apt-get install vim pt-battery pt-hub-controller pt-ipc pt-display wiringpi -y
 
 # update Raspbian
 sudo apt-get update
@@ -64,4 +64,12 @@ git clone https://github.com/impulselabsinc/mcpi
 git clone https://github.com/impulselabsinc/minecraft-skins
 git clone https://github.com/impulselabsinc/students
 git clone https://github.com/impulselabsinc/raspi-sysadmin
+git clone git://github.com/rricharz/pi-top-install
+git clone git://github.com/rricharz/pi-top-battery-status
+
+# install pi-top utils
+chmod +x pi-top-install/install*
+chmod +x pi-top-battery-status/install
+pi-top-battery-status/install
+pi-top-install/install-brightness
 
