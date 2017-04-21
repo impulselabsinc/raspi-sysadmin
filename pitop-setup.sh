@@ -20,6 +20,9 @@ sudo apt-get install vim pt-battery pt-hub-controller pt-ipc pt-display wiringpi
 sudo apt-get update
 sudo apt-get dist-upgrade -y
 
+# install python packages
+sudo pip install watchdog netifaces
+
 # enable SPI and I2C
 sudo raspi-config
 # go to the interfaces tab
