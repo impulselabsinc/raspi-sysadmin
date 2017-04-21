@@ -14,7 +14,7 @@ sudo apt-key add apt.pi-top.com.gpg.key
 sudo apt-get update
 
 # add pi-top drivers, vim and okteta
-sudo apt-get install vim pt-battery pt-hub-controller pt-ipc pt-display wiringpi okteta -y
+sudo apt-get install vim pt-battery pt-hub-controller pt-ipc pt-display wiringpi okteta python-imaging python-imaging-tk -y
 
 # update Raspbian
 sudo apt-get update
@@ -51,6 +51,8 @@ git clone https://github.com/impulselabsinc/mclabyrinth
 git clone https://github.com/impulselabsinc/mcpi
 git clone https://github.com/impulselabsinc/minecraft-skins
 git clone https://github.com/impulselabsinc/students
+git clone https://github.com/impulselabsinc/gitchat
+git clone https://github.com/impulselabsinc/gitchat-messages
 git clone https://github.com/impulselabsinc/raspi-sysadmin
 git clone git://github.com/rricharz/pi-top-install
 git clone git://github.com/rricharz/pi-top-battery-status
