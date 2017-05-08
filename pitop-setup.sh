@@ -21,7 +21,7 @@ sudo apt-get update
 sudo apt-get dist-upgrade -y
 
 # install python packages
-sudo pip install watchdog netifaces
+sudo pip install watchdog netifaces wiringpi
 
 # enable SPI and I2C
 sudo raspi-config
