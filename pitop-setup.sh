@@ -14,14 +14,14 @@ sudo apt-key add apt.pi-top.com.gpg.key
 sudo apt-get update
 
 # add pi-top drivers, vim and okteta
-sudo apt-get install vim pt-battery pt-hub-controller pt-ipc pt-display wiringpi okteta python-imaging python-imaging-tk -y
+sudo apt-get install vim pt-battery pt-hub-controller pt-ipc pt-display wiringpi okteta python-imaging python-imaging-tk libav-tools -y
 
 # update Raspbian
 sudo apt-get update
 sudo apt-get dist-upgrade -y
 
 # install python packages
-sudo pip install watchdog netifaces
+sudo pip install watchdog netifaces wiringpi
 
 # enable SPI and I2C
 sudo raspi-config
